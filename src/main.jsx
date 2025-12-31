@@ -6,11 +6,12 @@ import Home from "./components/pages/home.jsx";
 import Searchbar from "./components/pages/searchbar.jsx";
 import Cart from "./components/pages/cart.jsx";
 import NotFound from "./components/pages/not-found.jsx";
+import ResMenu from "./components/pages/res-menu.jsx";
 
 const appRouter = createBrowserRouter([
   {
+    path: "/",
     element: <App />,
-    errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home /> },
       {
@@ -21,7 +22,12 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/resturant/:resId",
+        element: <ResMenu />,
+      },
     ],
+    errorElement: <NotFound />,
   },
 ]);
 

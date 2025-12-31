@@ -2,7 +2,6 @@ import { Link, useRouteError } from "react-router-dom";
 
 export default function NotFound() {
   const err = useRouteError();
-  console.log(err);
 
   return (
     <div className="h-screen bg-[#101828] px-[4vw] flex items-center justify-center flex-col">
