@@ -10,6 +10,7 @@ import NotFound from "./components/pages/not-found.jsx";
 const appRouter = createBrowserRouter([
   {
     element: <App />,
+    errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home /> },
       {
@@ -21,10 +22,6 @@ const appRouter = createBrowserRouter([
         element: <Cart />,
       },
     ],
-  },
-  {
-    path: "*",
-    element: <NotFound />,
   },
 ]);
 
