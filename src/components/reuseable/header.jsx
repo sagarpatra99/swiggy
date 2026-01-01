@@ -23,6 +23,7 @@ export default function Header() {
         <Link to="">About</Link>
         <Link to="">Contact Us</Link>
         <Link to="/cart">Cart</Link>
+        <Link to="/grocery">Grocery</Link>
         <Link
           to=""
           className="flex items-center w-20"

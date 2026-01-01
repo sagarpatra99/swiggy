@@ -9,6 +9,7 @@ import {
 import { ChevronDown } from "lucide-react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { fetchingData } from "../../utils/fetch";
+import { useOnlineStatus } from "../../utils/useOnlineStatus";
 
 export default function Home() {
   const [allRestaurants, setallRestaurants] = useState([]);
@@ -16,6 +17,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
   const [sortBy, setSortBy] = useState("relevance");
+
+  const online = useOnlineStatus();
 
   useEffect(() => {
     const getData = async () => {
@@ -77,6 +80,7 @@ export default function Home() {
               <h2 className="pt-6 pb-4 text-xl font-semibold">
                 Top restaurant chains in Jamshedpur
               </h2>
+              <p>Online Status: {`${online ? "✅" : "🔴"}`}</p>
             </div>
             <ScrollArea className="w-full">
               <div className="flex items-center gap-8 pb-4">
